@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to cognizant</title>
+    <style>
+            
+            #te{
+               height:75px;
+           }
+       </style>
+</head>
+<body>
+        <h1>Personal Details</h1>
+        <form >
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" id="name"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <label for=></label>Male <input type="radio" name="gender" value="Male">
+                        Female <input type="radio" name="gender" value="Female">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hometown</td>
+                    <td>
+                        <select>
+                            <option value="New Delhi">
+                              New Delhi  
+                            </option>
+                            <option value="Mumbai">
+                                Mumbai
+                            </option>
+                            <option value="kolkata">
+                                Kolkata
+                            </option>
+                            <option value="Hyderabad">
+                                Hyderabad
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Address</td>
+                    <td height="100px"><input id="te" type="text"></td>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                    <td>Skills</td>
+                    <td>
+                        Java <input type="checkbox">
+                        html <input type="checkbox">
+                        oracle<input type="checkbox">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password" id="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="button" value="submit" onclick="validateform()"></td>
+                </tr>
+                
+               
+                
+            </table> 
+        </form>  
+        
+         
+     </body>
+     <script>
+       
+        function validateform()
+        {
+            var name=document.getElementById("name").value;
+            var password=document.getElementById("password").value;
+            var regex = /^[A-Za-z0-9 ]+$/;
+            var regex1 = /^[A-Za-z]+$/;
+            var isValid = regex.test(document.getElementById("name").value);
+            var flag=0;
+            if((name=="")&&(password!=""))
+            {
+               alert("name should not be empty");
+               return false;
+            }
+
+            else if((name!="")&&(password!=""))
+            {
+                 if(name.length<2 || name.length>30)
+                    {
+                      alert("name length should be between 2 to 30");
+                      return false;
+                    }
+                  else if (!isValid) {
+                                 alert("name should not contain  Special Characters.");
+                                 return false;
+                        } 
+                        else if(!name.match(regex1))
+            {
+                alert("Name should not contain any numbers");
+            }
+
+            }
+            
+            else if((name=="")&&(password==""))
+            alert("name and password cannot be empty");
+            else
+            alert("password cannot be empty");
+           
+                        
+         }
+
+
+
+
+
+
+        
+                       
+                  
+                  
+         
+         
+         
+     </script>
+</html>
